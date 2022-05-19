@@ -7,6 +7,7 @@ const initialState = {
   user: null,
   computer: null,
   score: localStorageServices.getScore(),
+  textResult: null,
 };
 
 const gameSlice = createSlice({
@@ -36,15 +37,24 @@ const gameSlice = createSlice({
     setScore: (state) => {
       if (state.user == Rock && state.computer == Scissors) {
         state.score++;
+        state.textResult = "WIN";
         localStorageServices.setScore(state.score);
-      }
-      if (state.user == Scissors && state.computer == Paper) {
+      } else if (state.user == Scissors && state.computer == Paper) {
         state.score++;
+        state.textResult = "WIN";
         localStorageServices.setScore(state.score);
-      }
-      if (state.user == Paper && state.computer == Rock) {
+      } else if (state.user == Paper && state.computer == Rock) {
         state.score++;
+        state.textResult = "WIN";
         localStorageServices.setScore(state.score);
+      } else if (state.user == Rock && state.computer == Paper) {
+        state.textResult = "LOSE";
+      } else if (state.user == Scissors && state.computer == Rock) {
+        state.textResult = "LOSE";
+      } else if (state.user == Paper && state.computer == Scissors) {
+        state.textResult = "LOSE";
+      } else {
+        state.textResult = "TIED";
       }
     },
   },

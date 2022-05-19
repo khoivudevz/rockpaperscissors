@@ -12,7 +12,7 @@ export default function ChoiceRole() {
   };
   return (
     <div>
-      <div className="flex items-center justify-between mx-[25rem]">
+      <div className="flex items-center justify-between md:mx-[10rem] lg:mx-[15rem] xl:mx-[25rem]">
         <div className="w-[150px] h-[140px]">
           <img
             src={Rock}

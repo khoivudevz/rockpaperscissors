@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        <div className="w-[820px] h-[190px]">
+        <div className="w-[383px] h-[139px] border-blueOcean border-8 rounded-3xl">
           <Score />
         </div>
       </div>
